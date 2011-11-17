@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<meta http-equiv="Content-Type" />
+		<title>Foodrack | <%= @title%> </title>
+		<%= csrf_meta_tag %>
+	  <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
+	  <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+	  <!--[if IE]><%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %><![endif]-->	
+		
+		<%= render 'layouts/stylesheets'%>
+		<%= render 'layouts/javascripts'%>
+  	<%= render 'layouts/header'%>
+		<%= csrf_meta_tag %>
+		
+
+		<!-- Load the Mootools Framework -->
+		<script src="http://www.google.com/jsapi"></script><script>google.load("mootools", "1.2.1");</script>	
+
+		<!-- Load the MenuMatic Class -->
+		<script src="/javascripts/MenuMatic_0.68.3.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- Create a MenuMatic Instance -->
+		<script type="text/javascript" >
+			window.addEvent('domready', function() {			
+				var myMenu = new MenuMatic();
+			});		
+		</script>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
